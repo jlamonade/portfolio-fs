@@ -13,10 +13,12 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(express.static('public'))
 
+// test route
 app.get('/', (req, res) => {
   res.sendFile('index.html')
 })
 
+// db connection then start listen
 mongooose
   .connect(process.env.MONGODB_URI || 'mongodb://localhost/portfolio', {
     useNewUrlParser: true,
